@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&family=Sacramento&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="card-container">
+
+    <!-- Page 1: Surprise Cover -->
+    <div class="page active" id="page1">
+      <div class="gift-icon">🎁</div>
+      <h1>Ek Chota Sa Surprise For My Girl ❤️</h1>
+      <p class="sub-text">A special tiny page made with lots of love just for you!</p>
+      <button class="btn" onclick="nextPage(2)">Open Your Gift ✨</button>
+    </div>
+
+    <!-- Page 2: Romantic Notes -->
+    <div class="page" id="page2">
+      <h2>Happy Birthday, My Heart! 🎂✨</h2>
+      <div class="romantic-note">
+        <p>Tum meri life ki sabse pyaari aur special hissa ho. Jab se tum aayi ho, har din thoda aur bright, thoda aur khubsurat lagne laga hai.</p>
+        <p>Tumhari yeh pyari si smile hamesha aise hi rahe. Tumhare saath har ek moment special hota hai, aur mai bas yahi chahta hu ki tum hamesha khush raho! 💖</p>
+        <p class="highlight-text">You mean the whole world to me! 🌸</p>
+      </div>
+      <button class="btn" onclick="nextPage(3)">Next Magic Page ➡️</button>
+    </div>
+
+    <!-- Page 3: Photo -->
+    <div class="page" id="page3">
+      <h2>Us & Our Happy Moments 📸❤️</h2>
+      <div class="photo-frame">
+        <img src="our-photo.jpg" alt="Our Special Photo" id="gfPhoto">
+      </div>
+      <p class="photo-caption">Together is my favorite place to be! ✨</p>
+      <button class="btn" onclick="nextPage(4)">One Last Message 💌</button>
+    </div>
+
+    <!-- Page 4: Sorry & Wish -->
+    <div class="page" id="page4">
+      <div class="sad-heart">🥺💔</div>
+      <h2>Sorry...</h2>
+      <p class="sorry-line">"Sorry tumhare Birthday ke din bhi hum tumse door hain... 😔"</p>
+      <p class="sweet-message">Dooriyan zaroor hain, par mera pyaar aur meri saari duayein har pal tumhare paas hain. Jaldi milenge aur bohot saara celebrate karenge! 💖🎉</p>
+      <div class="final-wish">Happy Birthday Once Again, My Love! 🎈🎂</div>
+      <button class="btn replay-btn" onclick="nextPage(1)">Watch Again 🔄</button>
+    </div>
+
+  </div>
+
+  <script>
+    function nextPage(pageNumber) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById('page' + pageNumber).classList.add('active');
+    }
+  </script>
+</body>
+</html>
