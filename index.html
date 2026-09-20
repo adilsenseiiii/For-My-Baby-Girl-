@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday My Love 💖</title>
+  <title>Happy Birthday Winyok 💖</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&family=Sacramento&display=swap" rel="stylesheet">
 </head>
@@ -19,34 +19,44 @@
       <button class="btn" onclick="nextPage(2)">Open Your Gift ✨</button>
     </div>
 
-    <!-- Page 2: Romantic Notes -->
+    <!-- Page 2: Custom Romantic Notes for Winyok -->
     <div class="page" id="page2">
-      <h2>Happy Birthday, My Heart! 🎂✨</h2>
+      <h2>Happy Birthday To My Favourite Person 💖</h2>
       <div class="romantic-note">
-        <p>Tum meri life ki sabse pyaari aur special hissa ho. Jab se tum aayi ho, har din thoda aur bright, thoda aur khubsurat lagne laga hai.</p>
-        <p>Tumhari yeh pyari si smile hamesha aise hi rahe. Tumhare saath har ek moment special hota hai, aur mai bas yahi chahta hu ki tum hamesha khush raho! 💖</p>
-        <p class="highlight-text">You mean the whole world to me! 🌸</p>
+        <p>Pata hai jab tu khush hoti hai toh mai bhi khush hota hu, jab tu udas hoti hai toh mai bhi udasi feel karta hu 😔.</p>
+        <p>Pata nehi tere sath mera itna attachment hogiya hai nah ki aab tere bina mai reh nehi sakta 🙂.</p>
+        <p>Bass uper wale se yehi dua karta hu tum hamesha khush raho or humesha mera pass raho ☺️💕🤌🏻.</p>
+        <p class="highlight-text">Once Again Happy Birthday My Baby Girl My Sweetheart 🥰.<br>Mera Nu I love You 💖.</p>
       </div>
       <button class="btn" onclick="nextPage(3)">Next Magic Page ➡️</button>
     </div>
 
-    <!-- Page 3: Photo -->
+    <!-- Page 3: 6 Photos Gallery -->
     <div class="page" id="page3">
       <h2>Us & Our Happy Moments 📸❤️</h2>
+      
       <div class="photo-frame">
-        <img src="our-photo.jpg" alt="Our Special Photo" id="gfPhoto">
+        <img id="galleryImg" src="our-photo.jpg" alt="Our Special Photo">
       </div>
-      <p class="photo-caption">Together is my favorite place to be! ✨</p>
+
+      <!-- Photos badalne ke buttons -->
+      <div style="margin-bottom: 15px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+        <button class="btn" style="padding: 8px 15px; font-size: 14px;" onclick="prevPhoto()">◀ Prev</button>
+        <span id="photoCount" style="font-weight: bold; color: #ff4757;">1 / 6</span>
+        <button class="btn" style="padding: 8px 15px; font-size: 14px;" onclick="nextPhoto()">Next ▶</button>
+      </div>
+
+      <p class="photo-caption">Together with Winyok is my favorite place to be! ✨</p>
       <button class="btn" onclick="nextPage(4)">One Last Message 💌</button>
     </div>
 
-    <!-- Page 4: Sorry & Wish -->
+    <!-- Page 4: Distance & Final Wish -->
     <div class="page" id="page4">
       <div class="sad-heart">🥺💔</div>
-      <h2>Sorry...</h2>
-      <p class="sorry-line">"Sorry tumhare Birthday ke din bhi hum tumse door hain... 😔"</p>
+      <h2>Sorry Winyok...</h2>
+      <p class="sorry-line">"Sorry tumhare Birthday ke din bhi hum tumse door hai 😔"</p>
       <p class="sweet-message">Dooriyan zaroor hain, par mera pyaar aur meri saari duayein har pal tumhare paas hain. Jaldi milenge aur bohot saara celebrate karenge! 💖🎉</p>
-      <div class="final-wish">Happy Birthday Once Again, My Love! 🎈🎂</div>
+      <div class="final-wish">Happy Birthday Once Again, Winyok! 🎈🎂</div>
       <button class="btn replay-btn" onclick="nextPage(1)">Watch Again 🔄</button>
     </div>
 
@@ -57,6 +67,32 @@
       const pages = document.querySelectorAll('.page');
       pages.forEach(page => page.classList.remove('active'));
       document.getElementById('page' + pageNumber).classList.add('active');
+    }
+
+    // 6 Photos Gallery Logic (Aapki uploaded files ke exact names)
+    const photos = [
+      "our-photo.jpg",
+      "our-photo (1).jpg",
+      "our-photo (2).jpg",
+      "our-photo (3).jpg",
+      "our-photo (4).jpg",
+      "our-photo jpg.jpg"
+    ];
+    let currentPhotoIndex = 0;
+
+    function updatePhoto() {
+      document.getElementById('galleryImg').src = photos[currentPhotoIndex];
+      document.getElementById('photoCount').innerText = (currentPhotoIndex + 1) + " / " + photos.length;
+    }
+
+    function nextPhoto() {
+      currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+      updatePhoto();
+    }
+
+    function prevPhoto() {
+      currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+      updatePhoto();
     }
   </script>
 </body>
